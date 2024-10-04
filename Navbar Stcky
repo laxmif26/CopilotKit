@@ -1,0 +1,36 @@
+##css code
+.navbar {
+    position: sticky;
+    top: 0; /* Sets the sticky point at the top */
+    background-color: white; /* Set a background color */
+    z-index: 1000; /* Ensures it's above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
+#javascript code
+<style>
+    .navbar {
+        position: fixed; /* Use fixed to keep it always at the top */
+        width: 100%;
+        background-color: white;
+        transition: background-color 0.3s;
+        z-index: 1000;
+    }
+    
+    .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.9); /* Change color on scroll */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    }
+</style>
+
+<script>
+    window.onscroll = function() {
+        const navbar = document.querySelector('.navbar');
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    };
+</script>
+
